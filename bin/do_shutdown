@@ -1,0 +1,7 @@
+#!/bin/env ruby
+require 'digital_ocean'
+require_relative '../lib/server'
+
+abort "do_shutdown [NAME]" unless ARGV[0]
+
+Server.new(ARGV[0]).save_and_destroy

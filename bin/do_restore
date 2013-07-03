@@ -1,0 +1,7 @@
+#!/bin/env ruby
+require 'digital_ocean'
+require_relative '../lib/server'
+
+abort "do_restore [NAME]" unless ARGV[0]
+
+Server.new(ARGV[0]).restore

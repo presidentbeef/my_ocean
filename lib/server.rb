@@ -49,9 +49,12 @@ class Server
       sleep 30
     end
 
+    get_server
+
+    puts "Now at #{@server.ip_address}"
+
     remove_old_images
   end
-
 
 
   def get_server

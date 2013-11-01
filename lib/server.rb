@@ -2,11 +2,11 @@ require 'digital_ocean'
 require_relative '../config/keys'
 
 class Server
-  def initialize name, opts = {}
+  def initialize opts = {}
     @ocean = DigitalOcean::API.new :client_id => CLIENT_ID, :api_key => API_KEY
-    @name = name
+    @name = opts[:name]
     @size = opts[:size] || "2GB"
-    @region_id = opts[:region] || 1
+    @region_id = opts[:region] || 3
     get_server
   end
 

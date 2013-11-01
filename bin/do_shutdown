@@ -2,6 +2,6 @@
 require 'digital_ocean'
 require_relative '../lib/server'
 
-abort "do_shutdown [NAME]" unless ARGV[0]
+abort "do_shutdown [image name]" unless ARGV[0]
 
-Server.new(ARGV[0]).save_and_destroy
+Server.new(:name => ARGV[0]).save_and_destroy

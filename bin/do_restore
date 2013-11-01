@@ -1,7 +1,6 @@
 #!/bin/env ruby
 require 'digital_ocean'
 require_relative '../lib/server'
+require_relative '../lib/options'
 
-abort "do_restore [NAME]" unless ARGV[0]
-
-Server.new(ARGV[0]).restore
+Server.new(Options.parse("do_restore", ARGV)).restore

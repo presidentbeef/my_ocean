@@ -41,7 +41,7 @@ class Server
     res = @ocean.droplets.create(opts)
 
     if res[:status] != "OK"
-      abort res
+      abort res.inspect
     end
 
     until status == "active"
